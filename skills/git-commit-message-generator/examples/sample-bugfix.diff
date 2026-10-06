@@ -1,0 +1,67 @@
+diff --git a/src/services/order_service.py b/src/services/order_service.py
+index aaa1111..bbb2222 100644
+--- a/src/services/order_service.py
++++ b/src/services/order_service.py
+@@ -120,18 +120,24 @@ class OrderService:
+         """
+         计算订单总金额
+         修复：使用浮点数导致精度丢失，改用 Decimal
+         """
+-        total = 0.0
++        from decimal import Decimal, ROUND_HALF_UP
++        total = Decimal('0.00')
+         for item in items:
+-            item_total = item.price * item.quantity
+-            if item.discount:
+-                item_total = item_total * (1 - item.discount / 100)
+-            total += item_total
++            price = Decimal(str(item.price))
++            quantity = Decimal(str(item.quantity))
++            item_total = price * quantity
++            if item.discount:
++                discount = Decimal(str(item.discount))
++                item_total = item_total * (Decimal('1') - discount / Decimal('100'))
++            total += item_total
+
+-        # 保留两位小数
+-        return round(total, 2)
++        # 四舍五入保留两位小数
++        return float(total.quantize(Decimal('0.01'), rounding=ROUND_HALF_UP))
+
+     def create_order(self, user_id: int, items: list, address: str) -> Order:
+         """创建订单"""
+@@ -155,7 +161,7 @@ class OrderService:
+         order = Order(
+             user_id=user_id,
+             items_json=json.dumps([item.to_dict() for item in items]),
+-            total_amount=self.calculate_total(items),
++            total_amount=self.calculate_total(items),
+             address=address,
+             status='pending',
+         )
+diff --git a/tests/test_order_service.py b/tests/test_order_service.py
+index ccc3333..ddd4444 100644
+--- a/tests/test_order_service.py
++++ b/tests/test_order_service.py
+@@ -88,6 +88,22 @@ def test_calculate_total_with_discount():
+     result = service.calculate_total(items)
+     assert result == 90.00
+
++
++def test_calculate_total_precision():
++    """测试浮点数精度问题：0.1 + 0.2 应等于 0.30"""
++    service = OrderService()
++    items = [
++        MockItem(price=0.1, quantity=1, discount=0),
++        MockItem(price=0.2, quantity=1, discount=0),
++    ]
++    result = service.calculate_total(items)
++    assert result == 0.30
++
++
++def test_calculate_total_large_numbers():
++    """测试大额订单精度"""
++    service = OrderService()
++    items = [MockItem(price=99999.99, quantity=100, discount=0)]
++    result = service.calculate_total(items)
++    assert result == 9999999.00

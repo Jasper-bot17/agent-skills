@@ -1,0 +1,22 @@
+:root {
+  /* 主色 */
+  --color-primary: #3498DB;
+  --color-primary-light: #75B9E7;
+  --color-primary-dark: #1D6FA5;
+
+  /* 互补色 */
+  --color-complementary: #DB7734;
+
+  /* 中性色 */
+  --color-bg: #F8F9FA;
+  --color-surface: #FFFFFF;
+  --color-text: #2C3E50;
+  --color-text-muted: #7F8C8D;
+  --color-border: #E9ECEF;
+
+  /* 语义色 */
+  --color-success: #28A745;
+  --color-warning: #FFC107;
+  --color-danger: #DC3545;
+  --color-info: #3498DB;
+}

@@ -1,0 +1,25 @@
+main.cpp: In function 'int main()':
+main.cpp:5:18: error: expected ';' before '}' token
+     int x = 5
+                  ^
+main.cpp:8:5: error: 'cout' was not declared in this scope
+     cout << "hello";
+     ^~~~
+main.cpp:8:5: note: suggested alternative: 'std::cout'
+In file included from main.cpp:1:
+/usr/include/c++/9/iostream:61:18: note: 'std::cout' declared here
+   61 |   extern ostream cout;
+      |                  ^~~~
+main.cpp:12:9: warning: unused variable 'y' [-Wunused-variable]
+     int y = 10;
+         ^
+main.cpp:15:1: error: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+main.cpp:18:20: fatal error: missing.h: No such file or directory
+   18 | #include <missing.h>
+      |                    ^~~~~~~~~
+compilation terminated.
+/tmp/ccXk3jL9.o: In function `main':
+main.cpp:(.text+0x1f): undefined reference to `func(int)'
+collect2: error: ld returned 1 exit status

@@ -1,0 +1,153 @@
+diff --git a/src/auth/wechat_auth.py b/src/auth/wechat_auth.py
+new file mode 100644
+index 0000000..a1b2c3d
+--- /dev/null
++++ b/src/auth/wechat_auth.py
+@@ -0,0 +1,85 @@
++"""微信扫码登录认证服务"""
++import requests
++from flask import current_app
++
++
++class WeChatAuthService:
++    """处理微信 OAuth 扫码登录流程"""
++
++    def __init__(self):
++        self.app_id = current_app.config['WECHAT_APP_ID']
++        self.app_secret = current_app.config['WECHAT_APP_SECRET']
++        self.base_url = 'https://api.weixin.qq.com/sns'
++
++    def get_qrcode_url(self, state: str) -> str:
++        """生成微信扫码登录二维码 URL"""
++        params = {
++            'appid': self.app_id,
++            'redirect_uri': current_app.config['WECHAT_REDIRECT_URI'],
++            'response_type': 'code',
++            'scope': 'snsapi_login',
++            'state': state,
++        }
++        return f"https://open.weixin.qq.com/connect/qrconnect?{'&'.join(f'{k}={v}' for k, v in params.items())}#wechat_redirect"
++
++    def get_access_token(self, code: str) -> dict:
++        """通过授权码获取 access_token 和 openid"""
++        url = f"{self.base_url}/oauth2/access_token"
++        params = {
++            'appid': self.app_id,
++            'secret': self.app_secret,
++            'code': code,
++            'grant_type': 'authorization_code',
++        }
++        resp = requests.get(url, params=params, timeout=10)
++        resp.raise_for_status()
++        return resp.json()
++
++    def get_user_info(self, access_token: str, openid: str) -> dict:
++        """获取微信用户基本信息"""
++        url = f"{self.base_url}/userinfo"
++        params = {
++            'access_token': access_token,
++            'openid': openid,
++        }
++        resp = requests.get(url, params=params, timeout=10)
++        resp.raise_for_status()
++        return resp.json()
++
++    def login_or_register(self, code: str) -> dict:
++        """微信登录：已有账号则登录，无则注册"""
++        token_data = self.get_access_token(code)
++        openid = token_data['openid']
++
++        # 查找已有用户
++        user = User.query.filter_by(wechat_openid=openid).first()
++        if user:
++            return {'user': user, 'is_new': False}
++
++        # 新用户：获取信息并注册
++        user_info = self.get_user_info(token_data['access_token'], openid)
++        user = User(
++            nickname=user_info.get('nickname'),
++            avatar=user_info.get('headimgurl'),
++            wechat_openid=openid,
++        )
++        db.session.add(user)
++        db.session.commit()
++        return {'user': user, 'is_new': True}
+diff --git a/src/models/user.py b/src/models/user.py
+index 111aaa1..222bbb2 100644
+--- a/src/models/user.py
++++ b/src/models/user.py
+@@ -23,6 +23,8 @@ class User(db.Model):
+     email = db.Column(db.String(120), unique=True, nullable=True)
+     password_hash = db.Column(db.String(256), nullable=True)
+     phone = db.Column(db.String(20), unique=True, nullable=True)
++    wechat_openid = db.Column(db.String(64), unique=True, nullable=True)
++    avatar = db.Column(db.String(500), nullable=True)
+     created_at = db.Column(db.DateTime, default=datetime.utcnow)
+     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+diff --git a/src/routes/auth.py b/src/routes/auth.py
+index 333ccc3..444ddd4 100644
+--- a/src/routes/auth.py
++++ b/src/routes/auth.py
+@@ -1,5 +1,6 @@
+ from flask import Blueprint, request, jsonify, session
+ from src.auth.email_auth import EmailAuthService
++from src.auth.wechat_auth import WeChatAuthService
+ from src.models.user import User
+ from src import db
+
+@@ -45,3 +46,28 @@ def logout():
+     session.clear()
+     return jsonify({'message': '退出成功'})
+
++
++@auth_bp.route('/wechat/qrcode', methods=['GET'])
++def wechat_qrcode():
++    """获取微信扫码登录二维码"""
++    state = secrets.token_urlsafe(16)
++    session['wechat_state'] = state
++    service = WeChatAuthService()
++    url = service.get_qrcode_url(state)
++    return jsonify({'qrcode_url': url, 'state': state})
++
++
++@auth_bp.route('/wechat/callback', methods=['GET'])
++def wechat_callback():
++    """微信登录回调处理"""
++    code = request.args.get('code')
++    state = request.args.get('state')
++    if not code or state != session.get('wechat_state'):
++        return jsonify({'error': '无效的授权参数'}), 400
++    service = WeChatAuthService()
++    result = service.login_or_register(code)
++    session['user_id'] = result['user'].id
++    return jsonify({'user': result['user'].to_dict(), 'is_new': result['is_new']})
+diff --git a/migrations/20260912_add_wechat_fields.py b/migrations/20260912_add_wechat_fields.py
+new file mode 100644
+index 0000000..555eee5
+--- /dev/null
++++ b/migrations/20260912_add_wechat_fields.py
+@@ -0,0 +1,22 @@
++"""添加微信登录相关字段
++
++Revision ID: add_wechat_fields
++Revises: previous_revision
++Create Date: 2026-09-12
++"""
++from alembic import op
++import sqlalchemy as sa
++
++
++revision = 'add_wechat_fields'
++down_revision = 'previous_revision'
++
++
++def upgrade():
++    op.add_column('user', sa.Column('wechat_openid', sa.String(64), nullable=True))
++    op.add_column('user', sa.Column('avatar', sa.String(500), nullable=True))
++    op.create_unique_constraint('uq_user_wechat_openid', 'user', ['wechat_openid'])
++
++
++def downgrade():
++    op.drop_constraint('uq_user_wechat_openid', 'user', type_='unique')
++    op.drop_column('user', 'avatar')
++    op.drop_column('user', 'wechat_openid')

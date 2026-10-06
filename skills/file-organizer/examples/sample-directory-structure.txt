@@ -1,0 +1,109 @@
+# 示例：整理前的目录结构（Downloads 文件夹）
+
+> 这是一个典型的混乱下载文件夹示例，用于演示 file-organizer 技能的整理效果。
+
+```
+~/Downloads/
+├── 2024年度报告.docx
+├── 2024年度报告 (1).docx
+├── IMG_20240115_143022.jpg
+├── IMG_20240116_091533.jpg
+├── DSC_00123.RAW
+├── screenshot_2024-03-01.png
+├── screenshot_2024-03-02.png
+├── wallpaper_4k.jpg
+├── 会议录音_20240210.m4a
+├── 音乐合辑.mp3
+├── podcast_episode42.mp3
+├── 电影_2024暑期档.mp4
+├── 教程视频_Python入门.mp4
+├── 录屏_20240315.mov
+├── setup_x64.exe
+├── python-3.12.0-macos11.pkg
+├── android-studio-2024.1.1.12-mac_arm.dmg
+├── 项目源码.zip
+├── backup_20240101.tar.gz
+├── photos_archive.rar
+├── 读书笔记.md
+├── 学习笔记.txt
+├── 合同模板.pdf
+├── 发票_202403.pdf
+├── 简历_2024版.pdf
+├── main.py
+├── utils.js
+├── config.yaml
+├── package.json
+├── .DS_Store
+├── .tmp_download_cache
+├── node_modules/              (排除目录)
+│   └── ... (大量文件)
+├── __pycache__/               (排除目录)
+│   └── ...
+└── 旧文件/
+    ├── 2023年资料.zip
+    └── 旧版简历.doc
+```
+
+## 统计概览
+
+- 文件总数：约 45 个（不含排除目录）
+- 总大小：约 8.5 GB
+- 主要空间占用：
+  - 视频：3 个，约 5.2 GB（61%）
+  - 压缩包：3 个，约 1.8 GB（21%）
+  - 图片：6 个，约 650 MB（8%）
+  - 安装包：3 个，约 500 MB（6%）
+  - 文档：7 个，约 120 MB（1%）
+  - 音频：3 个，约 100 MB（1%）
+  - 代码：4 个，约 1 MB
+  - 其他：6 个，约 130 MB
+
+## 整理后结构（按类型策略）
+
+```
+~/Downloads/
+├── 文档/
+│   ├── 2024年度报告.docx
+│   ├── 2024年度报告 (1).docx
+│   ├── 读书笔记.md
+│   ├── 学习笔记.txt
+│   ├── 合同模板.pdf
+│   ├── 发票_202403.pdf
+│   └── 简历_2024版.pdf
+├── 图片/
+│   ├── IMG_20240115_143022.jpg
+│   ├── IMG_20240116_091533.jpg
+│   ├── DSC_00123.RAW
+│   ├── screenshot_2024-03-01.png
+│   ├── screenshot_2024-03-02.png
+│   └── wallpaper_4k.jpg
+├── 视频/
+│   ├── 电影_2024暑期档.mp4
+│   ├── 教程视频_Python入门.mp4
+│   └── 录屏_20240315.mov
+├── 音频/
+│   ├── 会议录音_20240210.m4a
+│   ├── 音乐合辑.mp3
+│   └── podcast_episode42.mp3
+├── 压缩包/
+│   ├── 项目源码.zip
+│   ├── backup_20240101.tar.gz
+│   └── photos_archive.rar
+├── 代码/
+│   ├── main.py
+│   ├── utils.js
+│   ├── config.yaml
+│   └── package.json
+├── 可执行/安装包/
+│   ├── setup_x64.exe
+│   ├── python-3.12.0-macos11.pkg
+│   └── android-studio-2024.1.1.12-mac_arm.dmg
+├── 系统/临时/
+│   ├── .DS_Store
+│   └── .tmp_download_cache
+├── 旧文件/                    (原有子目录保留)
+│   ├── 2023年资料.zip
+│   └── 旧版简历.doc
+└── .file-organizer-backup/
+    └── undo_20260915_143000.sh
+```
