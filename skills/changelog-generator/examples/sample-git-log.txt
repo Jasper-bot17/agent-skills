@@ -1,0 +1,15 @@
+# 格式：hash|date|author|subject
+a1b2c3d|2024-06-15|alice@example.com|feat(auth): 添加 OAuth 登录功能
+b2c3d4e|2024-06-14|bob@example.com|fix(api): 修复用户列表分页错误
+c3d4e5f|2024-06-13|alice@example.com|docs(readme): 更新安装说明
+d4e5f6a|2024-06-12|charlie@example.com|refactor(user): 重构用户服务层
+e5f6a7b|2024-06-11|alice@example.com|perf(query): 优化数据库查询性能
+f6a7b8c|2024-06-10|bob@example.com|test(auth): 添加登录单元测试
+a7b8c9d|2024-06-09|alice@example.com|feat(search): 添加全文搜索功能
+b8c9d0e|2024-06-08|charlie@example.com|fix(ui): 修复移动端导航栏显示问题
+c9d0e1f|2024-06-07|alice@example.com|style(format): 统一代码格式
+d0e1f2a|2024-06-06|bob@example.com|chore(deps): 更新依赖版本
+e1f2a3b|2024-06-05|alice@example.com|feat(api)!: 重构 API 接口（不兼容变更）
+f2a3b4c|2024-06-04|charlie@example.com|ci(pipeline): 添加自动化部署
+a3b4c5d|2024-06-03|bob@example.com|build(webpack): 优化构建配置
+b4c5d6e|2024-06-02|alice@example.com|这是一个不规范的提交信息
