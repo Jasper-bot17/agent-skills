@@ -1,0 +1,1 @@
+select u.id,u.name,u.email,count(o.id) as order_count,sum(o.total) as total_spent from users u left join orders o on u.id=o.user_id where u.status='active' and o.created_at>='2024-01-01' group by u.id,u.name,u.email having count(o.id)>5 order by total_spent desc limit 10
