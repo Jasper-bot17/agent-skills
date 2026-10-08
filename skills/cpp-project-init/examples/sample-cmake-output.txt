@@ -1,0 +1,31 @@
+$ mkdir build && cd build
+$ cmake ..
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /path/to/demo-app/build
+
+$ make -j$(nproc)
+[ 25%] Building CXX object CMakeFiles/demo-app.dir/src/main.cpp.o
+[ 50%] Building CXX object CMakeFiles/demo-app.dir/src/demo_app.cpp.o
+[ 75%] Linking CXX executable bin/demo-app
+[ 75%] Built target demo-app
+[100%] Built target demo-app
+
+$ ./bin/demo-app
+demo-app v1.0.0
+2 + 3 = 5
+
+$ ctest --output-on-failure
+Test project /path/to/demo-app/build
+    Start 1: DemoAppTest.AddPositiveNumbers
+1/2 Test #1: DemoAppTest.AddPositiveNumbers ........   Passed    0.00 sec
+    Start 2: DemoAppTest.AddNegativeNumbers
+2/2 Test #2: DemoAppTest.AddNegativeNumbers ........   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 2
