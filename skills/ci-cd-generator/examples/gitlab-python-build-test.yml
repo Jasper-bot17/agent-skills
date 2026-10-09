@@ -1,0 +1,40 @@
+# Go CI/CD
+
+stages:
+  - build
+  - test
+
+go-build:
+  stage: build
+  image: golang:1.21
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - ~/go/pkg/mod/
+  script:
+    - go mod download
+    - go build ./...
+  artifacts:
+    paths:
+      - build/
+      - dist/
+      - target/
+    expire_in: 1 week
+
+go-test:
+  stage: test
+  image: golang:1.21
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - ~/go/pkg/mod/
+  script:
+    - go mod download
+    - go test ./... -v
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == 'main' || $CI_COMMIT_BRANCH == 'master'
+    - if: $CI_COMMIT_BRANCH == 'develop'
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+

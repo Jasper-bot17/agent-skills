@@ -1,0 +1,29 @@
+name: Rust Lint
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+
+      - name: Run linters
+        run: |
+          rustup component add clippy rustfmt
+          cargo clippy -- -D warnings
+          cargo fmt -- --check
+
