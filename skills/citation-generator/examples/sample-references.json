@@ -1,0 +1,97 @@
+[
+  {
+    "type": "journal",
+    "authors": "张三,李四",
+    "title": "深度学习在图像识别中的应用研究",
+    "journal": "计算机学报",
+    "year": 2024,
+    "volume": 47,
+    "issue": 3,
+    "pages": "100-110",
+    "doi": "10.1234/cjca.2024.001"
+  },
+  {
+    "type": "journal",
+    "authors": "Smith, John;Johnson, Alice",
+    "title": "Advances in Natural Language Processing",
+    "journal": "Journal of AI Research",
+    "year": 2023,
+    "volume": 15,
+    "issue": 2,
+    "pages": "45-60",
+    "doi": "10.5678/jair.2023.002"
+  },
+  {
+    "type": "book",
+    "authors": "王五",
+    "title": "机器学习导论",
+    "publisher": "清华大学出版社",
+    "year": 2023,
+    "edition": "第2版",
+    "city": "北京",
+    "pages": "50-80"
+  },
+  {
+    "type": "book",
+    "authors": "Smith, John",
+    "title": "Deep Learning Fundamentals",
+    "publisher": "MIT Press",
+    "year": 2022,
+    "edition": "2nd",
+    "city": "Cambridge"
+  },
+  {
+    "type": "webpage",
+    "authors": "赵六",
+    "title": "2024年人工智能发展报告",
+    "url": "https://example.com/ai-report-2024",
+    "publish_date": "2024-01-15",
+    "access_date": "2024-06-01",
+    "site": "科技资讯网"
+  },
+  {
+    "type": "thesis",
+    "authors": "钱七",
+    "title": "基于强化学习的机器人控制研究",
+    "degree": "博士",
+    "institution": "清华大学",
+    "city": "北京",
+    "year": 2024
+  },
+  {
+    "type": "conference",
+    "authors": "孙八",
+    "title": "神经网络优化新方法",
+    "conference": "国际计算机学术会议",
+    "location": "上海",
+    "year": 2024,
+    "pages": "120-130",
+    "publisher": "IEEE"
+  },
+  {
+    "type": "newspaper",
+    "authors": "周九",
+    "title": "人工智能技术发展新趋势",
+    "newspaper": "科技日报",
+    "date": "2024-03-15",
+    "edition": "3",
+    "pages": "A1"
+  },
+  {
+    "type": "report",
+    "authors": "中国信息通信研究院",
+    "title": "2024年人工智能产业发展白皮书",
+    "report_no": "CAICT-2024-AI-001",
+    "institution": "中国信息通信研究院",
+    "city": "北京",
+    "year": 2024
+  },
+  {
+    "type": "patent",
+    "authors": "吴十",
+    "title": "一种智能图像识别方法及系统",
+    "country": "中国",
+    "patent_no": "CN112345678A",
+    "date": "2024-02-01"
+  }
+]
