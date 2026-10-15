@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "user_id": 800,
+    "product_name": "限量键盘",
+    "quantity": 47,
+    "price": 2973.7,
+    "total": 454384.0,
+    "order_date": "2025-09-09",
+    "order_status": "已取消"
+  },
+  {
+    "id": 2,
+    "user_id": 2639,
+    "product_name": "智能相机",
+    "quantity": 12,
+    "price": 9013.36,
+    "total": 213913.7,
+    "order_date": "2022-12-08",
+    "order_status": "待发货"
+  },
+  {
+    "id": 3,
+    "user_id": 1468,
+    "product_name": "高端手机",
+    "quantity": 25,
+    "price": 3992.86,
+    "total": 191515.86,
+    "order_date": "2025-08-28",
+    "order_status": "退款中"
+  },
+  {
+    "id": 4,
+    "user_id": 4705,
+    "product_name": "新款鼠标",
+    "quantity": 97,
+    "price": 7034.57,
+    "total": 629259.8,
+    "order_date": "2024-09-30",
+    "order_status": "已完成"
+  },
+  {
+    "id": 5,
+    "user_id": 1199,
+    "product_name": "专业手表",
+    "quantity": 98,
+    "price": 3118.42,
+    "total": 255834.4,
+    "order_date": "2026-09-21",
+    "order_status": "退款中"
+  },
+  {
+    "id": 6,
+    "user_id": 1777,
+    "product_name": "经典手机",
+    "quantity": 61,
+    "price": 6613.57,
+    "total": 823671.24,
+    "order_date": "2022-10-09",
+    "order_status": "已发货"
+  },
+  {
+    "id": 7,
+    "user_id": 1099,
+    "product_name": "智能手表",
+    "quantity": 79,
+    "price": 7061.67,
+    "total": 94046.01,
+    "order_date": "2022-12-21",
+    "order_status": "待付款"
+  },
+  {
+    "id": 8,
+    "user_id": 6806,
+    "product_name": "专业手表",
+    "quantity": 34,
+    "price": 5543.0,
+    "total": 549428.7,
+    "order_date": "2025-09-10",
+    "order_status": "待付款"
+  },
+  {
+    "id": 9,
+    "user_id": 2720,
+    "product_name": "新款显示器",
+    "quantity": 76,
+    "price": 4954.89,
+    "total": 33577.75,
+    "order_date": "2025-07-08",
+    "order_status": "已发货"
+  },
+  {
+    "id": 10,
+    "user_id": 9082,
+    "product_name": "时尚显示器",
+    "quantity": 61,
+    "price": 2518.26,
+    "total": 88802.01,
+    "order_date": "2024-02-20",
+    "order_status": "待付款"
+  }
+]

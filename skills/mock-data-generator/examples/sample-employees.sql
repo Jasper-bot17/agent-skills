@@ -1,0 +1,10 @@
+INSERT INTO employees (id, name, email, phone, job_title, department, salary, hire_date) VALUES (1, '孙鹏', 'suopetx@message.com', '18602030406', '市场经理', '市场部', 45869, '2025-06-30');
+INSERT INTO employees (id, name, email, phone, job_title, department, salary, hire_date) VALUES (2, '曾玉兰', 'junmns@email.com', '18002999743', '运维工程师', '产品部', 7427, '2022-11-20');
+INSERT INTO employees (id, name, email, phone, job_title, department, salary, hire_date) VALUES (3, '唐璐', 'bsgnqej@sample.org', '18015078989', '全栈开发工程师', '客服部', 25581, '2022-10-31');
+INSERT INTO employees (id, name, email, phone, job_title, department, salary, hire_date) VALUES (4, '董慧', 'hlgverj@example.com', '13155660707', '项目经理', '人力资源部', 21947, '2022-01-02');
+INSERT INTO employees (id, name, email, phone, job_title, department, salary, hire_date) VALUES (5, '彭辉', 'lskkxh@sample.org', '15563320233', '行政助理', '财务部', 36889, '2023-06-02');
+INSERT INTO employees (id, name, email, phone, job_title, department, salary, hire_date) VALUES (6, '吕怡', 'dyrhljvbvf@mail.com', '13809466217', '数据科学家', '行政部', 20167, '2023-10-10');
+INSERT INTO employees (id, name, email, phone, job_title, department, salary, hire_date) VALUES (7, '曹菲菲', 'ynnvchqe@demo.net', '15192551424', '数据分析师', '技术部', 5056, '2022-03-01');
+INSERT INTO employees (id, name, email, phone, job_title, department, salary, hire_date) VALUES (8, '宋静', 'rdyrxujy@mock.io', '18264655219', '财务专员', '设计部', 46367, '2026-08-05');
+INSERT INTO employees (id, name, email, phone, job_title, department, salary, hire_date) VALUES (9, '吴建华', 'qzdzun@mock.io', '13461263470', '市场经理', '数据部', 21859, '2025-05-26');
+INSERT INTO employees (id, name, email, phone, job_title, department, salary, hire_date) VALUES (10, '韩倩', 'xdawmjtfdp@message.com', '15862615993', 'UI设计师', '人力资源部', 15690, '2026-09-06');
