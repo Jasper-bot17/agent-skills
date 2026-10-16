@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>张三 - Resume</title>
+<style>
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #333; line-height: 1.7; min-height: 100vh; }
+.resume-container { max-width: 820px; margin: 30px auto; padding: 45px 55px; background: #fff; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+.resume-header { text-align: center; margin-bottom: 35px; padding-bottom: 25px; background: linear-gradient(135deg, #667eea15, #764ba215); border-radius: 8px; padding: 25px; }
+.resume-name { font-size: 32px; background: linear-gradient(135deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 5px; }
+.resume-title { font-size: 17px; color: #666; margin-bottom: 12px; }
+.resume-contact { font-size: 13px; color: #777; }
+.contact-item { margin: 0 4px; }
+.resume-section { margin-bottom: 28px; }
+.section-title { font-size: 19px; color: #667eea; margin-bottom: 18px; padding-left: 12px; border-left: 4px solid #667eea; }
+.entry { margin-bottom: 20px; padding: 15px; background: #fafbfc; border-radius: 8px; border-left: 3px solid #667eea; }
+.entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+.entry-company { font-weight: bold; font-size: 16px; color: #333; }
+.entry-date { font-size: 13px; color: #999; background: #f0f0f0; padding: 2px 10px; border-radius: 10px; }
+.entry-subheader { display: flex; justify-content: space-between; margin-top: 4px; }
+.entry-position { font-size: 14px; color: #667eea; font-weight: 500; }
+.entry-location, .entry-gpa { font-size: 13px; color: #aaa; }
+.entry-description { margin-top: 10px; padding-left: 18px; }
+.entry-description li { font-size: 14px; margin-bottom: 4px; color: #555; }
+.skill-group { margin-bottom: 10px; font-size: 14px; }
+.skill-category { font-weight: bold; color: #667eea; display: inline-block; min-width: 100px; }
+.skill-tag { display: inline-block; background: linear-gradient(135deg, #667eea15, #764ba215); color: #667eea; padding: 3px 10px; border-radius: 15px; font-size: 12px; margin: 2px; font-weight: 500; }
+.tech-stack { margin: 8px 0; }
+.tech-label { color: #999; font-size: 13px; }
+.tech-tag { display: inline-block; background: #f0f4ff; color: #667eea; padding: 2px 8px; border-radius: 10px; font-size: 12px; margin: 2px; }
+.project-link { font-size: 12px; color: #667eea; text-decoration: none; }
+.objective-position { font-size: 14px; margin-bottom: 8px; }
+.objective-summary { font-size: 14px; color: #666; line-height: 1.8; }
+ul { padding-left: 20px; }
+@media print { body { background: #fff; } .resume-container { box-shadow: none; margin: 0; border-radius: 0; } }
+
+</style>
+</head>
+<body>
+<div class="resume-container">
+    <header class="resume-header">
+        <h1 class="resume-name">张三</h1>
+        <p class="resume-title">高级软件工程师</p>
+        <div class="resume-contact"><span class="contact-item">zhangsan@example.com</span> · <span class="contact-item">138-0000-1234</span> · <span class="contact-item">北京</span> · <span class="contact-item">https://zhangsan.dev</span> · <span class="contact-item">https://github.com/zhangsan</span></div>
+    </header>
+    
+    <section class="resume-section">
+        <h2 class="section-title">求职意向</h2>
+        <div class="section-content"><p class="objective-position"><strong>目标职位:</strong> 高级后端开发工程师 / 技术负责人</p><p class="objective-summary">5年后端开发经验，精通 Go 和 Python，擅长高并发系统设计与微服务架构。曾主导千万级用户产品的技术架构升级，系统可用性提升至 99.99%。具备良好的团队管理能力和技术文档撰写能力。</p></div>
+    </section>
+
+    <section class="resume-section">
+        <h2 class="section-title">工作经历</h2>
+        <div class="section-content">
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-company">某互联网科技有限公司</span>
+                        <span class="entry-date">2022-03 - 至今</span>
+                    </div>
+                    <div class="entry-subheader">
+                        <span class="entry-position">高级软件工程师 / 技术负责人</span>
+                        <span class="entry-location">北京</span>
+                    </div>
+                    <ul class="entry-description"><li>主导核心交易系统微服务架构改造，将单体应用拆分为 15 个微服务，系统吞吐量提升 300%</li><li>设计并实现分布式限流和熔断机制，高峰期系统稳定性从 99.5% 提升至 99.99%</li><li>带领 8 人技术团队，负责代码评审、技术选型和新人培养</li><li>推动 CI/CD 流水线建设，部署时间从 2 小时缩短至 15 分钟</li></ul>
+                </div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-company">某软件开发公司</span>
+                        <span class="entry-date">2019-07 - 2022-02</span>
+                    </div>
+                    <div class="entry-subheader">
+                        <span class="entry-position">软件工程师</span>
+                        <span class="entry-location">上海</span>
+                    </div>
+                    <ul class="entry-description"><li>参与电商平台后端开发，负责订单模块和支付模块的设计与实现</li><li>优化数据库查询性能，核心接口响应时间从 800ms 降低至 120ms</li><li>编写单元测试和集成测试，代码覆盖率从 40% 提升至 85%</li><li>参与技术方案评审，输出 20+ 份技术设计文档</li></ul>
+                </div></div>
+    </section>
+
+    <section class="resume-section">
+        <h2 class="section-title">项目经验</h2>
+        <div class="section-content">
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-company">分布式订单管理系统</span>
+                        <span class="entry-date">2023-01 - 2023-12</span>
+                    </div>
+                    <div class="entry-subheader">
+                        <span class="entry-position">技术负责人</span>
+                        <a href="https://github.com/zhangsan/order-system" class="project-link">https://github.com/zhangsan/order-system</a>
+                    </div>
+                    <div class="tech-stack"><span class="tech-label">技术栈:</span> <span class="tech-tag">Go</span> <span class="tech-tag">Kafka</span> <span class="tech-tag">Redis</span> <span class="tech-tag">MySQL</span> <span class="tech-tag">Kubernetes</span></div>
+                    <ul class="entry-description"><li>设计基于事件驱动的分布式订单系统，支持日均 500 万订单处理</li><li>实现最终一致性的分布式事务方案，数据一致性达到 100%</li><li>系统上线后订单处理延迟从 5s 降低至 200ms</li></ul>
+                </div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-company">智能推荐引擎</span>
+                        <span class="entry-date">2021-03 - 2021-09</span>
+                    </div>
+                    <div class="entry-subheader">
+                        <span class="entry-position">核心开发</span>
+                        
+                    </div>
+                    <div class="tech-stack"><span class="tech-label">技术栈:</span> <span class="tech-tag">Python</span> <span class="tech-tag">TensorFlow</span> <span class="tech-tag">Redis</span> <span class="tech-tag">Flask</span></div>
+                    <ul class="entry-description"><li>参与个性化推荐系统的开发，基于协同过滤和深度学习模型</li><li>推荐点击率提升 25%，用户停留时间增加 15%</li><li>设计实时特征计算管道，特征更新延迟低于 1 秒</li></ul>
+                </div></div>
+    </section>
+
+    <section class="resume-section">
+        <h2 class="section-title">教育背景</h2>
+        <div class="section-content">
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-company">某知名大学</span>
+                        <span class="entry-date">2016-09 - 2019-06</span>
+                    </div>
+                    <div class="entry-subheader">
+                        <span class="entry-position">硕士 · 计算机科学与技术</span>
+                        <span class="entry-gpa">GPA: 3.8/4.0</span>
+                    </div>
+                    <ul class="entry-description"><li>研究方向：分布式系统与云计算</li><li>发表 SCI 论文 1 篇，获得国家奖学金</li></ul>
+                </div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-company">某知名大学</span>
+                        <span class="entry-date">2012-09 - 2016-06</span>
+                    </div>
+                    <div class="entry-subheader">
+                        <span class="entry-position">学士 · 软件工程</span>
+                        <span class="entry-gpa">GPA: 3.6/4.0</span>
+                    </div>
+                    
+                </div></div>
+    </section>
+
+    <section class="resume-section">
+        <h2 class="section-title">专业技能</h2>
+        <div class="section-content"><div class="skill-group"><span class="skill-category">编程语言:</span> <span class="skill-tag">Go</span> <span class="skill-tag">Python</span> <span class="skill-tag">Java</span> <span class="skill-tag">C++</span> <span class="skill-tag">SQL</span> <span class="skill-tag">Shell</span></div><div class="skill-group"><span class="skill-category">后端框架:</span> <span class="skill-tag">Gin</span> <span class="skill-tag">Echo</span> <span class="skill-tag">Django</span> <span class="skill-tag">Flask</span> <span class="skill-tag">Spring Boot</span></div><div class="skill-group"><span class="skill-category">数据库:</span> <span class="skill-tag">MySQL</span> <span class="skill-tag">PostgreSQL</span> <span class="skill-tag">Redis</span> <span class="skill-tag">MongoDB</span> <span class="skill-tag">Elasticsearch</span></div><div class="skill-group"><span class="skill-category">中间件:</span> <span class="skill-tag">Kafka</span> <span class="skill-tag">RabbitMQ</span> <span class="skill-tag">Nginx</span> <span class="skill-tag">gRPC</span> <span class="skill-tag">Consul</span></div><div class="skill-group"><span class="skill-category">DevOps:</span> <span class="skill-tag">Docker</span> <span class="skill-tag">Kubernetes</span> <span class="skill-tag">Jenkins</span> <span class="skill-tag">GitLab CI</span> <span class="skill-tag">Prometheus</span> <span class="skill-tag">Grafana</span></div><div class="skill-group"><span class="skill-category">其他:</span> <span class="skill-tag">微服务架构</span> <span class="skill-tag">分布式系统</span> <span class="skill-tag">高并发设计</span> <span class="skill-tag">系统性能优化</span></div></div>
+    </section>
+
+    <section class="resume-section">
+        <h2 class="section-title">证书资质</h2>
+        <div class="section-content"><ul><li>AWS 认证解决方案架构师 - 专业级</li><li>CKA (Certified Kubernetes Administrator)</li><li>PMP 项目管理专业人士</li></ul></div>
+    </section>
+
+    <section class="resume-section">
+        <h2 class="section-title">语言能力</h2>
+        <div class="section-content"><ul><li>中文: 母语</li><li>英语: 流利（CET-6，可作为工作语言）</li></ul></div>
+    </section>
+</div>
+</body>
+</html>
