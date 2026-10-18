@@ -1,0 +1,45 @@
+{
+  "name": "用户管理 API 测试",
+  "base_url": "https://api.example.com",
+  "auth": {"type": "bearer", "token": "test-token-123"},
+  "default_headers": {"Content-Type": "application/json"},
+  "endpoints": [
+    {
+      "name": "获取用户列表",
+      "method": "GET",
+      "path": "/api/users",
+      "params": {"page": 1, "limit": 10},
+      "expect_status": 200,
+      "expect_fields": ["data", "total", "page"]
+    },
+    {
+      "name": "获取用户详情",
+      "method": "GET",
+      "path": "/api/users/1",
+      "expect_status": 200,
+      "expect_fields": ["id", "name", "email"]
+    },
+    {
+      "name": "创建用户",
+      "method": "POST",
+      "path": "/api/users",
+      "body": {"name": "测试用户", "email": "test@example.com", "age": 25},
+      "expect_status": 201,
+      "expect_fields": ["id", "name", "email"]
+    },
+    {
+      "name": "更新用户",
+      "method": "PUT",
+      "path": "/api/users/1",
+      "body": {"name": "更新后的名字"},
+      "expect_status": 200,
+      "expect_fields": ["id", "name"]
+    },
+    {
+      "name": "删除用户",
+      "method": "DELETE",
+      "path": "/api/users/1",
+      "expect_status": 204
+    }
+  ]
+}

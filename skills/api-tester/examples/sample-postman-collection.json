@@ -1,0 +1,280 @@
+{
+  "info": {
+    "name": "用户管理 API 测试",
+    "_postman_id": "auto-generated-1792326986",
+    "description": "自动生成于 2026-10-18 20:36:26",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "获取用户列表",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/users",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response has field data\", function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response has field total\", function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"total\");",
+              "});",
+              "pm.test(\"Response has field page\", function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"page\");",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "获取用户详情",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/users/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "1"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response has field id\", function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"id\");",
+              "});",
+              "pm.test(\"Response has field name\", function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"name\");",
+              "});",
+              "pm.test(\"Response has field email\", function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"email\");",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "创建用户",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/users",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"测试用户\",\n  \"email\": \"test@example.com\",\n  \"age\": 25\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "pm.test(\"Response has field id\", function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"id\");",
+              "});",
+              "pm.test(\"Response has field name\", function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"name\");",
+              "});",
+              "pm.test(\"Response has field email\", function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"email\");",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "更新用户",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/users/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"更新后的名字\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "pm.test(\"Response has field id\", function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"id\");",
+              "});",
+              "pm.test(\"Response has field name\", function () {",
+              "    var json = pm.response.json();",
+              "    pm.expect(json).to.have.property(\"name\");",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "删除用户",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/users/1",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "1"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 204\", function () {",
+              "    pm.response.to.have.status(204);",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://api.example.com"
+    },
+    {
+      "key": "token",
+      "value": "test-token-123"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "test-token-123",
+        "type": "string"
+      }
+    ]
+  }
+}
