@@ -1,0 +1,25 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "user": {
+      "id": 1001,
+      "name": "赵*",
+      "phone": "136****2222",
+      "email": "z******@company.com",
+      "address": "深圳市南山区科技园***"
+    },
+    "orders": [
+      {
+        "order_id": "ORD001",
+        "amount": 299.0,
+        "recipient_phone": "138****4444"
+      },
+      {
+        "order_id": "ORD002",
+        "amount": 158.0,
+        "recipient_phone": "139****6666"
+      }
+    ]
+  }
+}

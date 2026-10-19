@@ -1,0 +1,17 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "user": {
+      "id": 1001,
+      "name": "赵六",
+      "phone": "13611112222",
+      "email": "zhaoliu@company.com",
+      "address": "深圳市南山区科技园路1号"
+    },
+    "orders": [
+      {"order_id": "ORD001", "amount": 299.00, "recipient_phone": "13833334444"},
+      {"order_id": "ORD002", "amount": 158.00, "recipient_phone": "13955556666"}
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "rules": [
+    {"field": "user_id", "aliases": ["user_id", "uid"], "method": "hash", "params": {"salt": "my-secret", "length": 12}},
+    {"field": "phone", "aliases": ["phone"], "method": "replace", "params": {"replacement": "***"}}
+  ]
+}
