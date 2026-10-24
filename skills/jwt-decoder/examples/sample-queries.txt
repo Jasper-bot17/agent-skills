@@ -1,0 +1,5 @@
+# 经典 JWT（已过期，来自 jwt.io）
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJleHAiOjE1MTYyNDI2MjJ9.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+
+# 生成测试 JWT
+# python3 scripts/jwt_tool.py --generate --secret mysecret --sub 1001 --name "Alice" --role admin --exp 3600
