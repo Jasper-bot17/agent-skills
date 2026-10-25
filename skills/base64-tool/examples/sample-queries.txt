@@ -1,0 +1,21 @@
+# 文本编解码示例
+encode "Hello World"
+decode "SGVsbG8gV29ybGQ="
+
+# URL-safe 示例
+encode "Hello World" --url-safe
+decode "SGVsbG8gV29ybGQ" --url-safe
+
+# 中文编解码
+encode "你好，世界"
+decode "5L2g5aW977yM5LiW55WM"
+
+# 随机生成
+random 16
+random 32 --url-safe
+
+# Padding 分析
+analyze "SGVsbG8=" "SGVsbG8"
+
+# Basic Auth 示例（user1:password123）
+encode "user1:password123"
