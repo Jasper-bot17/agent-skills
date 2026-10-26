@@ -1,0 +1,24 @@
+{
+  "title": "选择工作机会",
+  "criteria": [
+    {"name": "薪资", "weight": 8, "direction": "positive"},
+    {"name": "通勤时间", "weight": 5, "direction": "negative"},
+    {"name": "团队氛围", "weight": 7, "direction": "positive"},
+    {"name": "成长空间", "weight": 9, "direction": "positive"},
+    {"name": "福利", "weight": 4, "direction": "positive"}
+  ],
+  "options": [
+    {
+      "name": "大厂A",
+      "scores": {"薪资": 9, "通勤时间": 5, "团队氛围": 6, "成长空间": 9, "福利": 8}
+    },
+    {
+      "name": "创业公司B",
+      "scores": {"薪资": 7, "通勤时间": 8, "团队氛围": 9, "成长空间": 7, "福利": 4}
+    },
+    {
+      "name": "国企C",
+      "scores": {"薪资": 6, "通勤时间": 7, "团队氛围": 7, "成长空间": 5, "福利": 9}
+    }
+  ]
+}

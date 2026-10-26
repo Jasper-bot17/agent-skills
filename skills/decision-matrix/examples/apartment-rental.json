@@ -1,0 +1,24 @@
+{
+  "title": "选择租房",
+  "criteria": [
+    {"name": "租金", "weight": 8, "direction": "negative"},
+    {"name": "通勤时间", "weight": 9, "direction": "negative"},
+    {"name": "面积", "weight": 5, "direction": "positive"},
+    {"name": "采光", "weight": 6, "direction": "positive"},
+    {"name": "周边配套", "weight": 4, "direction": "positive"}
+  ],
+  "options": [
+    {
+      "name": "小区A",
+      "scores": {"租金": 7, "通勤时间": 3, "面积": 8, "采光": 7, "周边配套": 8}
+    },
+    {
+      "name": "公寓B",
+      "scores": {"租金": 5, "通勤时间": 7, "面积": 5, "采光": 6, "周边配套": 9}
+    },
+    {
+      "name": "合租C",
+      "scores": {"租金": 9, "通勤时间": 8, "面积": 4, "采光": 5, "周边配套": 6}
+    }
+  ]
+}
