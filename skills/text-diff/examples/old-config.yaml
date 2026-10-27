@@ -1,0 +1,14 @@
+database:
+  host: localhost
+  port: 5432
+  name: myapp
+  timeout: 30
+
+server:
+  host: 0.0.0.0
+  port: 8080
+  debug: true
+
+logging:
+  level: info
+  file: app.log

@@ -1,0 +1,14 @@
+# 文件对比
+python3 scripts/text_diff.py examples/old-config.yaml examples/new-config.yaml
+
+# 统一 diff 格式
+python3 scripts/text_diff.py examples/old-config.yaml examples/new-config.yaml --unified
+
+# 并排对比
+python3 scripts/text_diff.py examples/old-config.yaml examples/new-config.yaml --side-by-side
+
+# 只看统计
+python3 scripts/text_diff.py examples/old-config.yaml examples/new-config.yaml --stats-only
+
+# JSON 输出
+python3 scripts/text_diff.py examples/old-config.yaml examples/new-config.yaml --json

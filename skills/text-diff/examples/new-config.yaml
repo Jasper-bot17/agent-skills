@@ -1,0 +1,15 @@
+database:
+  host: db.production.com
+  port: 5432
+  name: myapp_prod
+  timeout: 60
+
+server:
+  host: 0.0.0.0
+  port: 8080
+  debug: false
+  workers: 4
+
+logging:
+  level: warn
+  file: /var/log/app.log
