@@ -1,0 +1,15 @@
+# 推荐习惯配置
+python3 scripts/habit_tracker.py add "早起(7点前)" -c "健康"
+python3 scripts/habit_tracker.py add "运动30分钟" -c "健康"
+python3 scripts/habit_tracker.py add "阅读30分钟" -c "学习"
+python3 scripts/habit_tracker.py add "背单词20个" -c "学习"
+python3 scripts/habit_tracker.py add "喝水8杯" -c "健康"
+
+# 每日打卡
+python3 scripts/habit_tracker.py check "早起(7点前)"
+python3 scripts/habit_tracker.py check "阅读30分钟"
+
+# 查看进度
+python3 scripts/habit_tracker.py dashboard
+python3 scripts/habit_tracker.py week
+python3 scripts/habit_tracker.py month
