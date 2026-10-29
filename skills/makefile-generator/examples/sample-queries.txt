@@ -1,0 +1,19 @@
+# 基本用法（在项目目录下运行）
+python3 scripts/gen_makefile.py
+
+# 指定程序名
+python3 scripts/gen_makefile.py --target myapp
+
+# C++17 + 多线程
+python3 scripts/gen_makefile.py --extra-flags "-std=c++17 -pthread"
+
+# 预览不写入
+python3 scripts/gen_makefile.py --preview
+
+# C 项目
+python3 scripts/gen_makefile.py --lang c
+
+# 生成后编译
+make
+make run
+make clean
