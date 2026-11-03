@@ -47,6 +47,7 @@
 | 39 | text-diff | 开发工具 | 文本/文件差异对比 |
 | 40 | habit-tracker | 生活管理 | 习惯打卡、连续天数、完成率 |
 | 41 | makefile-generator | 开发工具 | C/C++ Makefile 自动生成 |
+| 42 | gitignore-generator | 开发工具 | .gitignore 文件自动生成 |
 
 ## 使用方式
 

@@ -10,8 +10,9 @@ import os
 import sys
 from datetime import datetime
 
-SKILLS_DIR = "/home/user/.doubao/agent_mode/workspace/.user_skills"
-OUTPUT_DIR = "/home/user/Doubao/chats/38441283173235458/skill-collection-site"
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+SKILLS_DIR = os.path.join(_SCRIPT_DIR, "skills")
+OUTPUT_DIR = _SCRIPT_DIR
 
 # 技能分类映射
 CATEGORY_MAP = {
@@ -27,6 +28,7 @@ CATEGORY_MAP = {
     "date-extractor": "日程管理",
     "markdown-formatter": "文档工具",
     "json-formatter": "数据工具",
+    "gitignore-generator": "开发工具",
 }
 
 # 技能图标（emoji）
@@ -43,6 +45,7 @@ ICON_MAP = {
     "date-extractor": "📅",
     "markdown-formatter": "📄",
     "json-formatter": "🔗",
+    "gitignore-generator": "🙈",
 }
 
 CATEGORY_COLORS = {
